@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Асем — лучший куратор</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(to right, #ffe259, #ffa751);
+        color: #333;
+        overflow-x: hidden;
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      header {
+        padding: 2rem 1rem;
+        text-align: center;
+        background-color: #fff3cd;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        color: #d97706;
+        animation: fadeIn 1s ease forwards;
+      }
+      section {
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #1f2937;
+        font-family: "Poppins", sans-serif;
+      }
+      section p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      .highlight {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        margin: 2rem auto;
+        max-width: 700px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+      .highlight:hover {
+        transform: scale(1.03);
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: #1f1f1f;
+        color: #fff;
+      }
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.75rem;
+        }
+        section h2 {
+          font-size: 1.5rem;
+        }
+        section p {
+          font-size: 1rem;
+        }
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,400;0,700;1,400&family=Poppins:wght@400;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", sans-serif;
+        color: #222;
+        margin-bottom: 1rem;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #ffee00, #ffcc00);
+        text-align: center;
+        padding: 6rem 1rem;
+        color: #000;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+      }
+
+      .button {
+        background: #000;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .button:hover {
+        background: #333;
+      }
+
+      .about,
+      .achievements,
+      .gallery,
+      .faq,
+      .quote {
+        text-align: center;
+      }
+
+      .about img {
+        width: 180px;
+        border-radius: 100px;
+        margin-bottom: 1.5rem;
+      }
+
+      .reviews {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .review {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+      }
+
+      .review img {
+        width: 50px;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+      }
+
+      .achievements ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .achievements li {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .faq-item {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .faq-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .quote blockquote {
+        font-style: italic;
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact form {
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact input,
+      .contact textarea,
+      .contact button {
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .contact button {
+        background: #ffee00;
+        border: none;
+        color: #000;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .contact button:hover {
+        background: #e0d200;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        section {
+          padding: 3rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Асема — самый лучший куратор на свете!</h1>
+    </header>
+
+    <section>
+      <div class="highlight">
+        <h2>Наставник, который вдохновляет</h2>
+        <p>
+          Асема не просто помогает — она верит в каждого и всегда находит слова
+          поддержки. Её советы — это как GPS в мире знаний!
+        </p>
+      </div>
+
+      <div class="highlight">
+        <h2>Талант обучать и направлять</h2>
+        <p>
+          С Асемой всё становится понятным. Она умеет объяснить сложное простыми
+          словами и делает обучение настоящим удовольствием.
+        </p>
+      </div>
+
+      <div class="highlight">
+        <h2>Пример для подражания</h2>
+        <p>
+          Уверенность, доброта, профессионализм — всё это про Асем. Такой
+          наставник — это удача!
+        </p>
+      </div>
+    </section>
+    <section class="hero">
+      <h1>Асема — лучший куратор</h1>
+      <p>
+        Наставник, который вдохновляет, поддерживает и помогает добиваться
+        успеха!
+      </p>
+      <button class="button">Узнать больше</button>
+    </section>
+
+    <section class="about">
+      <img src="https://via.placeholder.com/180" alt="Асем" />
+      <h2>О Асеме</h2>
+      <p>
+        Асема — внимательная, добрая и энергичная наставница, которая всегда
+        рядом, чтобы помочь и вдохновить. Она умеет находить подход к каждому.
+      </p>
+    </section>
+
+    <section class="reviews">
+      <div class="review">
+        <img src="https://via.placeholder.com/50" alt="Отзыв 1" />
+        <p>
+          «Асема — лучшая! Благодаря ей я добился результатов, о которых раньше
+          только мечтал!»
+        </p>
+      </div>
+      <div class="review">
+        <img src="https://via.placeholder.com/50" alt="Отзыв 2" />
+        <p>«Каждое занятие с Асемы — это не просто обучение, а вдохновение!»</p>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <h2>Достижения Асемы</h2>
+      <ul>
+        <li>Более 100 выпускников</li>
+        <li>10+ успешных проектов</li>
+        <li>Победитель в номинации "Куратор года"</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <h2>Фото с мероприятий</h2>
+      <div class="gallery-grid">
+        <img src="https://via.placeholder.com/300x200" alt="Фото 1" />
+        <img src="https://via.placeholder.com/300x200" alt="Фото 2" />
+        <img src="https://via.placeholder.com/300x200" alt="Фото 3" />
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq-item">
+        <h3>Почему Асема — лучший наставник?</h3>
+        <p>
+          Потому что она умеет слушать, объяснять, вдохновлять и быть другом.
+        </p>
+      </div>
+    </section>
+
+    <section class="quote">
+      <h2>Мотивация от Асемы</h2>
+      <blockquote>
+        «Всегда верь в себя и иди к своей цели, даже если путь кажется сложным»
+      </blockquote>
+    </section>
+
+    <section class="contact">
+      <h2>Связаться с Асемой</h2>
+      <form>
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Ваш Email" required />
+        <textarea placeholder="Сообщение" rows="4" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 — Посвящено Асемe, самому крутому куратору ❤️</p>
+    </footer>
+  </body>
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</html>
